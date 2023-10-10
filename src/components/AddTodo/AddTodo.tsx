@@ -2,8 +2,6 @@ import  { useState } from "react"; // Importing the useState hook from React to 
 import { useDispatch } from "react-redux"; // Importing useDispatch hook from react-redux for dispatching actions.
 import { addTodo } from "../../features/todo/todoSlice"; // Importing the addTodo action from the todoSlice.
 
-
-
 function AddTodo() {
   // Initializing a state variable 'todo' to manage the input field's value.
   const [todo, setTodo] = useState("");

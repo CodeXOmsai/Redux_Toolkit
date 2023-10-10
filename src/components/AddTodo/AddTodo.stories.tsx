@@ -15,17 +15,13 @@ interface TemplateProps {
   args: string;
 }
 
-const Template: React.FC<TemplateProps> = (args) => (
+const Template: React.FC<TemplateProps> = () => (
   <Provider store={store}>
     {" "}
     {/* Provide the Redux store */}
-    <AddTodo {...args} />
+    <AddTodo />
   </Provider>
 );
 
 export const AddTodoStory = Template.bind({});
-AddTodoStory.args = {
-  backgroundColor: "bg-gray-800",
-  color: "text-gray-100",
-  label: "Add Todo",
-};
+
