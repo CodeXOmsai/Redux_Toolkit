@@ -24,13 +24,23 @@ export const todoSlice = createSlice({
         done: false,
       };
       // Add the new todo to the state's todo array
-      state.todo.push(todoNew);
+      // state.todo.push(todoNew);
     },
 
     // Reducer for removing a todo item
     removeTodo: (state, action) => {
       // Filter out the todo with the ID passed in the action payload
       state.todo = state.todo.filter((todo) => todo.id !== action.payload.id);
+    },
+
+    // Reducer for adding a todo item after the API call is successful
+    addTodoSuccess: (state, action) => {
+      const savedTodo = {
+        id: nanoid(),
+        title: action.payload,
+        done: false,
+      };
+      state.todo.push(savedTodo);
     },
 
     // Reducer for toggling the "done" status of a todo item
@@ -51,8 +61,10 @@ export const todoSlice = createSlice({
   },
 });
 
+
+
 // Define any thunks here (none in this example)
 
 // Export the action creators (addTodo, removeTodo, toggleTodo) and the reducer
-export const { addTodo, removeTodo, toggleTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, toggleTodo, addTodoSuccess, } = todoSlice.actions;
 export default todoSlice.reducer;

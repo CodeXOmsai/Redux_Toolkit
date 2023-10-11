@@ -8,6 +8,7 @@ function AddTodo() {
 
   // Creating a dispatch function to dispatch the 'addTodo' action.
   const dispatch = useDispatch();
+  
 
   // Function to handle the form submission.
   const addTodoHandler = (e: React.FormEvent) => {
